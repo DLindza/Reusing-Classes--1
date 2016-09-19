@@ -1,6 +1,8 @@
 package lindsay.devon.ReusingClasses1;
 import java.awt.List;
 import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 /**
  * Created by devonlindsay on 9/15/16.
  */
@@ -13,21 +15,40 @@ Try solving this without creating a copy of the list. How many swap or move oper
 In your main class call the method that rotates your array
 Print original and rotated List values to screen */
 
+    public static void rotateList(ArrayList myList, int k) {
+        for(int i = 0; i < k; i++) {
+            myList.add(myList.get(0));
+            myList.remove(0);
+        }
+    }
 
+    public static void printList(ArrayList myList) {
+        for(int i = 0; i < myList.size(); i++) {
+            System.out.println(myList.get(i));
+        }
+    }
 
     public static void main(String[] args) {
-        String[] myList = new String[5];
-        myList[0] = "Dogs";
-        myList[1] = "Cats";
-        myList[2] = "Fish";
-        myList[3] = "Horses";
-        myList[4] = "Penguins";
+        ArrayList <String> myList = new ArrayList<String>();
+        myList.add("Dogs");
+        myList.add("Cats");
+        myList.add("Fish");
+        myList.add("Horses");
+        myList.add("Penguins");
+
+        printList(myList);
+    rotateList(myList,3);
+        System.out.println();
+        printList(myList);
+
+
+
+
     }
-public void rotateList(Array[] myList, int k) {
-    if (k > myList.length) {
-        k = k%myList.length;
-    }
-    }
-}
+
+
+
 
 }
+
+
